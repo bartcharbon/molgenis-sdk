@@ -6,7 +6,6 @@
 		<artifactId>molgenis</artifactId>
 		<version>0.0.2-SNAPSHOT</version>
 	</parent>
-	<!-- please change this! -->
 	<artifactId>molgenis-sdk</artifactId>
 	<packaging>war</packaging>
 
@@ -27,11 +26,25 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
-			</plugin>		
+			</plugin>
 			<!-- add sources/resources created by molgenis generator -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>execution-jaxb</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>target/generated-sources/jaxb</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 			<!-- Include generated doc in war -->
 			<plugin>
@@ -70,6 +83,41 @@
 			<version>0.0.2-SNAPSHOT</version>
 		</dependency>
 		<dependency>
+			<groupId>org.molgenis</groupId>
+			<artifactId>molgenis-omx-core</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.molgenis</groupId>
+			<artifactId>molgenis-search</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.molgenis</groupId>
+			<artifactId>molgenis-search-elasticsearch</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.molgenis</groupId>
+			<artifactId>molgenis-omx-dataexplorer</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.molgenis</groupId>
+			<artifactId>molgenis-omx-protocolviewer</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.molgenis</groupId>
+			<artifactId>molgenis-omx-importer</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.molgenis</groupId>
+			<artifactId>molgenis-omx-mobile</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
 			<version>3.2.3.RELEASE</version>
@@ -83,6 +131,54 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>3.2.3.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.molgenis</groupId>
+			<artifactId>molgenis-omx-protocolmanager</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>2.33.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-htmlunit-driver</artifactId>
+			<version>2.33.0</version>
+			<scope>test</scope>
+			<exclusions>
+                <exclusion>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-remote-driver</artifactId>
+                </exclusion>
+            </exclusions>
+		</dependency>
+		<dependency>
+			<groupId>dazzle</groupId>
+			<artifactId>dazzle</artifactId>
+			<version>1</version>
+		</dependency>
+		<dependency>
+			<groupId>dazzle</groupId>
+			<artifactId>bytecode</artifactId>
+			<version>1</version>
+		</dependency>
+		<dependency>
+			<groupId>dazzle</groupId>
+			<artifactId>biojava</artifactId>
+			<version>1</version>
+		</dependency>
+		<dependency>
+			<groupId>dazzle</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>dazzle</groupId>
+			<artifactId>dasmi-model</artifactId>
+			<version>1</version>
 		</dependency>
 	</dependencies>
 </project>

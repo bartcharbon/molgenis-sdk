@@ -8,3 +8,4 @@ molgenis-compute-core/test-output
 data/
 test-output/
 bin/
+/target

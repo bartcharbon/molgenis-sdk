@@ -1,0 +1,57 @@
+<dazzle xmlns="http://www.biojava.org/2000/dazzle">
+	<datasource id="demo"
+		jclass="org.biojava.servlets.dazzle.datasource.GFFAnnotationSource">
+		<string name="name" value="Demo_data" />
+		<string name="description" value="Demo datasource for GFF file" />
+		<string name="version" value="default" />
+		<string name="fileName" value="/demo.gff" />
+		<boolean name="dotVersions" value="true" />
+		<string name="mapMaster" value="http://localhost:8080/das/test/" />
+	</datasource>
+	<datasource id="wormgenes" jclass="services.XgapGenePlugin">
+		<string name="name" value="database_gene_test" />
+		<string name="description" value="a demo for how to write a Dazzle plugin" />
+		<string name="version" value="1.0" />
+	</datasource>
+	<datasource id="wormgenes2" jclass="services.XgapGenePlugin2">
+		<string name="name" value="database_gene_test" />
+		<string name="description" value="a demo for how to write a Dazzle plugin" />
+		<string name="version" value="1.0" />
+	</datasource>
+	<datasource id="col7a1" jclass="services.XgapGenePlugin2Col7a1">
+		<string name="name" value="database_gene_test" />
+		<string name="description" value="a demo for how to write a Dazzle plugin" />
+		<string name="version" value="1.0" />
+	</datasource>
+	<datasource id="chd7" jclass="services.XgapGenePlugin2Chd7">
+		<string name="name" value="database_gene_test" />
+		<string name="description" value="a demo for how to write a Dazzle plugin" />
+		<string name="version" value="1.0" />
+	</datasource>
+	<datasource id="gonl" jclass="services.XgapGenePlugin2GoNL">
+		<string name="name" value="database_gene_test" />
+		<string name="description" value="a demo for how to write a Dazzle plugin" />
+		<string name="version" value="1.0" />
+	</datasource>
+	<datasource id="patient" jclass="services.XgapGenePlugin2Patient">
+		<string name="name" value="database_gene_test" />
+		<string name="description" value="a demo for how to write a Dazzle plugin" />
+		<string name="version" value="1.0" />
+	</datasource>
+	<datasource id="lvvsnilv" jclass="services.XgapGenePlugin2LvVsNilv">
+		<string name="name" value="database_gene_test" />
+		<string name="description" value="a demo for how to write a Dazzle plugin" />
+		<string name="version" value="1.0" />
+
+	</datasource>
+
+	<datasource id="arvc" jclass="services.XgapGenePlugin2Arvc">
+
+		<string name="name" value="database_gene_test" />
+
+		<string name="description" value="a demo for how to write a Dazzle plugin" />
+
+		<string name="version" value="1.0" />
+
+	</datasource>
+</dazzle>

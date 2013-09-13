@@ -1,0 +1,63 @@
+<html>
+
+<head>
+<!--<script language="javascript" src="http://www.biodalliance.org/js/dalliance-compiled.js"></script>-->
+<script language="javascript" src="http://www.biodalliance.org/canvas/dalliance-compiled.js"></script>
+<script language="javascript">
+  new Browser({
+    chr:          '8',
+    viewStart:    61591337,
+    viewEnd:      61779465,
+    cookieKey:    'human',
+    
+    coordSystem: {
+        speciesName: 'Human',
+        taxon: 9606,
+        auth: 'GRCh',
+        version: '37'
+    },
+    
+    chains: {
+        hg18ToHg19: new Chainset('http://www.derkholm.net:8080/das/hg18ToHg19/', 'NCBI36', 'GRCh37',
+                                 {
+                                    speciesName: 'Human',
+                                    taxon: 9606,
+                                    auth: 'NCBI',
+                                    version: 36
+                                 })
+    },
+    
+    sources:     [{name:                 'Genome',
+                   uri:                  'http://www.derkholm.net:8080/das/hg19comp/',
+                   desc:                 'Human reference genome build GRCh37',
+                   tier_type:            'sequence',
+                   provides_entrypoints: true},
+                  {name:                 'Genes',     
+                   desc:                 'Gene structures from Ensembl 59 (GENCODE 4)',
+                   uri:                  'http://www.derkholm.net:8080/das/hsa_59_37d/',      
+                   collapseSuperGroups:  true,
+                   provides_karyotype:   true,
+                   provides_search:      true},
+                  {name:                 'CHD7 mutations',
+                   uri:                  'http://localhost:8080/das/chd7'}],
+    
+    browserLinks: {
+        Ensembl: 'http://www.ensembl.org/Homo_sapiens/Location/View?r=${chr}:${start}-${end}',
+        UCSC: 'http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr${chr}:${start}-${end}',
+        Sequence: 'http://www.derkholm.net:8080/das/hg19comp/sequence?segment=${chr}:${start},${end}'
+    },
+    
+    searchEndpoint: new DASSource('http://www.derkholm.net:8080/das/hsa_59_37d/'),
+    karyotypeEndpoint: new DASSource('http://www.derkholm.net:8080/das/hsa_59_37d/')
+  });
+</script>
+
+
+</head>
+<body>
+
+<div id="svgHolder"></div>
+
+</body>
+
+</html>

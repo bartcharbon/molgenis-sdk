@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<molgenis name="example">
-	<plugin name="molgenis_header" type="plugins.header.MolgenisHeader" />
-	<menu name="Main">
-		<form name="Experiments" entity="Experiment">
-			<menu name="ExperimentMenu">
-				<form name="Samples" entity="Sample" view="list" />
-				<form name="Traits" entity="Trait" view="list" />
-				<form name="Data" entity="Data" />
-				<form name="AggregateData" entity="AggregateData" />
+<molgenis name="molgenis-sdk" label="Molgenis">
+	<!-- plugin name="molgenis_header" type="plugins.header.MolgenisHeader" /-->
+	<menu label="Home" name="main">
+		<plugin id="home" label="Home" name="HomePlugin" type="org.molgenis.plugins.HomePlugin"/>
+		<plugin id="protocolviewer" label="Catalog" name="ProtocolViewerPlugin" type="org.molgenis.omx.protocolviewer.ProtocolViewerPlugin" />
+		<plugin id="dataexplorer" label="Data Explorer" name="DataExplorerPlugin" type="org.molgenis.dataexplorer.plugin.DataExplorerPlugin"/>
+		<plugin id="mutation" label="Mutation" name="MutationPlugin" type="org.molgenis.plugins.MutationPlugin" />
+		<plugin id="importwizard" label="Data Importer" name="UploadWizard" type="org.molgenis.omx.importer.ImportWizardPlugin" />
+		<plugin id="useraccount" label="Account" name="UserAccountPlugin" type="org.molgenis.omx.auth.ui.UserAccountPlugin" />
+		<menu label="Admin" name ="admin">
+			<plugin id="dataindexer" label="Data Set Indexer" name="DataSetsIndexerPlugin" type="org.molgenis.omx.plugin.DataSetsIndexerPlugin"/>
+			<plugin id="datasetdeleter" label="Data Set Deleter" name="DataSetDeleterPlugin" type="org.molgenis.omx.datasetdeleter.DataSetDeleterPlugin"/>				
+			<menu label="Entities" name ="entities">
+				<plugin id="form/Gene" label="Gene" name="GeneFormPlugin" type="org.molgenis.ui.form.MolgenisEntityFormPlugin" />
+				<plugin id="form/Chromosome" label="Chromosome" name="ChromosomeFormPlugin" type="org.molgenis.ui.form.MolgenisEntityFormPlugin" />
 			</menu>
-		</form>
+		</menu>
 	</menu>
 </molgenis>
